@@ -18,6 +18,7 @@ class User():
         Initializes a new user with a unique ID.
         """
         self.id = str(uuid.uuid4())
+        self.__password = None
 
     @property
     def password(self):
@@ -51,7 +52,8 @@ class User():
             pwd (str): The password to be validated.
 
         Returns:
-            bool: True if the provided password matches the user's hashed password, False otherwise.
+            bool: True if the provided password matches the user's hashed
+            password, False otherwise.
         """
         if pwd is None or type(pwd) is not str:
             return False
